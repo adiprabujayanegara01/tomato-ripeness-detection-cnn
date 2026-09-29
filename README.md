@@ -479,18 +479,13 @@ sebaiknya tidak digunakan untuk menyimpan gambar pengguna yang bersifat pribadi 
 
 ---
 
-## 📄 Lisensi
-
-Jika proyek ini merupakan bagian dari skripsi dan belum menentukan lisensi open-source, bagian lisensi dapat ditambahkan kemudian sesuai kebutuhan penulis.
-
----
 
 ## 👤 Author
 
-**[Nama Anda]**
+**[Adi Prabu Jayanegara]**
 
-Program Studi: **[Program Studi]**  
-Universitas: **[Nama Universitas]**  
+Program Studi: **[Informatika]**  
+Universitas: **[Universitas Teknologi Yogyakarta]**  
 Tahun: **2026**
 
 ---

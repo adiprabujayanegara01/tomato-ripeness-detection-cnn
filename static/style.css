@@ -1,0 +1,190 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #333;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.btn-primary {
+    background-color: #dc3545;
+    border: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #a71d2a;
+}
+
+.status {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    display: inline-block;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.status.mentah {
+    background-color: #77dd77;
+    /* Hijau */
+    color: white;
+}
+
+.status.setengah-matang {
+    background-color: #ffcc00;
+    /* Oranye */
+    color: black;
+}
+
+.status.matang {
+    background-color: #ff6961;
+    /* Merah */
+    color: white;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+}
+
+img {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Sidebar Styling */
+.list-group {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+#prediction-status {
+    font-size: 16px;
+    font-weight: bold;
+    color: #dc3545;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .upload-form {
+        z-index: 0;
+        position: relative;
+    }
+
+    .sidebar {
+        z-index: 9999;
+    }
+}
+
+/* Styling untuk sidebar dengan gradasi merah muda */
+.sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    /* Gradasi merah muda */
+    padding-top: 80px;
+    /* Memberikan jarak lebih dari tombol */
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+    /* Menambahkan jarak antar menu */
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    padding-left: 20px;
+}
+
+.open-menu {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: #ff9a9e;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+#prediction-status {
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #dc3545;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model CNN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-danger">Model CNN</h1>
+        <p class="text-center text-muted">Informasi mengenai model Convolutional Neural Network (CNN) yang digunakan
+            dalam sistem ini.</p>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Arsitektur Model CNN</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <pre class="bg-light p-3 rounded">
+Model CNN untuk fitur gambar
+cnn_input = Input(shape=(128, 128, 3))
+x = Conv2D(32, (3, 3), activation='relu')(cnn_input)
+x = MaxPooling2D(pool_size=(2, 2))(x)
+x = Conv2D(64, (3, 3), activation='relu')(x)
+x = MaxPooling2D(pool_size=(2, 2))(x)
+x = Conv2D(128, (3, 3), activation='relu')(x)
+x = MaxPooling2D(pool_size=(2, 2))(x)
+x = Flatten()(x)
+
+Model MLP untuk fitur warna dan tekstur
+mlp_input = Input(shape=(color_texture_features.shape[1],))
+y = Dense(64, activation='relu')(mlp_input)
+
+Gabungkan CNN dan MLP
+merged = Concatenate()([x, y])
+z = Dense(128, activation='relu')(merged)
+z = Dropout(0.5)(z)
+output = Dense(len(le.classes_), activation='softmax')(z)
+                    </pre>
+                </div>
+                <div class="col-md-6 text-center">
+                    <p class="text-muted mt-2">Gambar: Arsitektur Model CNN</p>
+                    <img src="{{ url_for('static', filename='cnn_architecture.png') }}" alt="Arsitektur Model CNN"
+                        class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Contoh Gambar Dari Dataset Dan Histogram Warna (RGB)</h3>
+            <img src="{{ url_for('static', filename='dataset_example_rgb.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Fungsi Ekstraksi Fitur Warna (Histogram HSV)</h3>
+            <img src="{{ url_for('static', filename='hsv_image.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Histogram Warna Dalam Ruang HSV</h3>
+            <img src="{{ url_for('static', filename='histogram_hsv.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Ubah Gambar Dalam Grayscale</h3>
+            <img src="{{ url_for('static', filename='grayscale_image.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Fungsi ekstraksi fitur tekstur (Local Binary Pattern - LBP)</h3>
+            <img src="{{ url_for('static', filename='lbp_image.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Hasil Ekstraksi Fitur LBP</h3>
+            <img src="{{ url_for('static', filename='lbp_feature_extraction.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Histogram Fitur Tekstur (Local Binary Pattern - LBP)</h3>
+            <img src="{{ url_for('static', filename='lbp_histogram.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Perbandingan Akurasi Model Pada Data Latih Dan Validasi</h3>
+            <img src="{{ url_for('static', filename='accuracy_comparison.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Perbandingan Loss Model Pada Latih Dan Validasi</h3>
+            <img src="{{ url_for('static', filename='loss_comparison.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="card p-4 shadow-lg mt-4">
+            <h3 class="text-primary">Hasil Confusion Matrix Model</h3>
+            <img src="{{ url_for('static', filename='hasil_confusion_matrix_model.png') }}" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

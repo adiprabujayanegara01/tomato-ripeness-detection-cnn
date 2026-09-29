@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card result-card p-4 shadow-lg">
+                    <h3 class="text-center text-success">Hasil Prediksi</h3>
+                    <div class="text-center">
+                        <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Gambar yang diunggah" class="img-fluid rounded shadow-sm" width="300">
+                    </div>
+                    <ul class="list-group list-group-flush mt-3">
+                        <li class="list-group-item d-flex align-items-center">
+                            <strong class="me-2">Status Kematangan:</strong>
+                            <span class="status {% if result['Status Kematangan'] == 'Mentah' %} mentah {% elif result['Status Kematangan'] == 'Setengah_Matang' %} setengah-matang {% else %} matang {% endif %}">
+                                {{ result['Status Kematangan'] | replace('_', ' ') | title }}
+                            </span>
+                        </li>
+                        <li class="list-group-item"><strong>Confidence Score:</strong> {{ result['Confidence Scores'].values() | list | first }}</li>
+                    </ul>
+                    <div class="text-center mt-3">
+                        <a href="/" class="btn btn-primary">Coba Lagi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

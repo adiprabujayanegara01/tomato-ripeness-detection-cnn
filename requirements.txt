@@ -1,0 +1,10 @@
+Flask
+Flask-Session
+Werkzeug
+mysqlclient
+bcrypt
+numpy
+tensorflow
+opencv-python
+scikit-image
+scikit-learn
